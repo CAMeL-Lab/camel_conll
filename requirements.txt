@@ -1,0 +1,8 @@
+conllx-df @ git+https://github.com/CAMeL-Lab/conllx_df@d204240e8774dfea1fa4032121d0fca1eafb1834
+docopt==0.6.2
+numpy==2.3.1
+pandas==2.3.1
+python-dateutil==2.9.0.post0
+pytz==2025.2
+six==1.17.0
+tzdata==2025.2
