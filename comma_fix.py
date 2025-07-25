@@ -23,7 +23,7 @@ from typing import List, Union
 from pandas import concat, DataFrame
 from docopt import docopt
 
-from utils.dir_utils import DirectoryInformation, get_dir_names, get_file_names, make_dir, remove_file_name_extension, process_directory
+from utils.dir_utils import get_file_names, remove_file_name_extension
 from utils.projectivity import projective_checker
 from utils.prt_token_pos import get_prt_token_pos_dict
 from conllx_df.conllx_df import ConllxDf
@@ -214,20 +214,3 @@ if __name__ == '__main__':
             conllx = ConllxDf(file_path=dir_path / file_name)
             conllx.file_data = fix_conllx_sentences(conllx)
             conllx.write(pathlib.Path(output_path), '')
-    elif arguments['--parent_dir']:
-        # read/write paths
-        read_path = pathlib.Path(arguments['--parent_dir'])
-        write_path = pathlib.Path(output_path)
-
-        # sub dir names
-        sub_dir_names = get_dir_names(read_path)
-        dir_info = DirectoryInformation(read_path, write_path, sub_dir_names)
-        
-        # file names not needed
-        file_name_list = []
-
-        def process_conllx(conllx):
-            print(f'Processing file {conllx.file_name}')
-            conllx.file_data = fix_conllx_sentences(conllx)
-        
-        process_directory(dir_info, file_name_list, process_conllx)
