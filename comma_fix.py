@@ -199,22 +199,21 @@ if __name__ == '__main__':
         conllx.file_data = fix_conllx_sentences(conllx)
         # conllx.file_name = 'comma_test_data_fixed.conllx'
         
-        if conllx_path == output_path: # same path, change name to aboid overwriting original
+        if conllx_path == output_path: # same path, change name to avoid overwriting original
             file_name = f"{remove_file_name_extension(conllx.file_path.name)}_comma_fixed.conllx"
         else:
             file_name = ''
         conllx.write(pathlib.Path(output_path), file_name)
     elif arguments['--dir']:
-        dir_info = make_dir(pathlib.Path(output_path))
+        dir_path = pathlib.Path(arguments['--dir'])
 
         file_name_list = get_file_names(dir_path, 'conllx')
         
         for file_name in file_name_list:
             print(f'Processing file {file_name}')
-            conllx = read_conllx_file(dir_path, file_name)
+            conllx = ConllxDf(file_path=dir_path / file_name)
             conllx.file_data = fix_conllx_sentences(conllx)
-            conllx.file_path = new_dir
-            conllx.write_file()
+            conllx.write(pathlib.Path(output_path), '')
     elif arguments['--parent_dir']:
         # read/write paths
         read_path = pathlib.Path(arguments['--parent_dir'])
