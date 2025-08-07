@@ -1,28 +1,24 @@
 
-from dataclasses import dataclass
 import os
-from pathlib import Path
+from typing import List
 
-def get_file_names(data_path, endswith=''):
-    ret_files = []
-    if not os.path.isdir(Path(data_path)):
-        raise FileNotFoundError(f'Directory not found: {data_path}')
-    for dirpath, _, files in os.walk(data_path):
-        print(f"Found directory: {dirpath}")
+def get_files(input_path: str) -> List[str]:
+    # return one or more file_paths in a list,
+    # depending on whether a single file or a directory of files
+    # has been passed.
+    if os.path.isdir(input_path):
+        return sorted([os.path.join(input_path,f) for f in os.listdir(input_path) 
+            if os.path.isfile(os.path.join(input_path,f))])
+    else:
+        return [input_path]
 
-        for file_name in files:
-            ret_files.append(file_name)
-        
-        if 'Icon\r' in ret_files:
-            ret_files.remove('Icon\r')
-        if '.DS_Store' in ret_files:
-            ret_files.remove('.DS_Store')
-        
-        if endswith:
-            ret_files = [f_name for f_name in ret_files if f_name.endswith(endswith)]
-        # done within the os.walk for loop so 
-        # it doesn't traverse subdirectories
-        return ret_files
+def is_conll(f: str) -> bool:
+    return f.endswith('.conllx') or f.endswith('.conllu')
+
+def get_conll_files(input_arg: str) -> List[str]:
+    ## checks whether input was a file or a directory
+    all_files = [input_arg] if os.path.isfile(input_arg) else get_files(input_arg)
+    return [file for file in all_files if is_conll(file)]
 
 def remove_file_name_extension(file_name):
     # remove the extension, taking into account multiple . found in the name

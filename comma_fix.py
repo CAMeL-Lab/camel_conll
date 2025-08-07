@@ -23,11 +23,10 @@ from typing import List, Union
 from pandas import concat, DataFrame
 from docopt import docopt
 
-from utils.dir_utils import get_file_names, remove_file_name_extension
+from utils.dir_utils import get_conll_files, remove_file_name_extension
 from utils.projectivity import projective_checker
 from utils.prt_token_pos import get_prt_token_pos_dict
 from conllx_df.conllx_df import ConllxDf
-# from camel_conll.utils.utils import DirectoryInformation, get_dir_names, get_file_names, make_dir, remove_file_name_extension
 
 arguments = docopt(__doc__)
 
@@ -207,7 +206,7 @@ if __name__ == '__main__':
     elif arguments['--dir']:
         dir_path = pathlib.Path(arguments['--dir'])
 
-        file_name_list = get_file_names(dir_path, 'conllx')
+        file_name_list = get_conll_files(dir_path, 'conllx')
         
         for file_name in file_name_list:
             print(f'Processing file {file_name}')
