@@ -1,0 +1,169 @@
+index	target_field	lex	catib_pos	mada_pos	parent_lex	parent_catib_pos	parent_mada_pos	rel	order	target_value_long	target_value_short	exact_matches
+1	REL	*	*	*	*	*	*	TPC	C-P	مبتدأ أول	مبتدأ	2
+2	REL	*	*	*	*	*	*	TPC	P-C	مبتدأ أول مؤخر	مبتدأ	2
+1	REL	*	*	*	*	NOM	*	SBJ	C-P	مبتدأ خبر	مبتدأ	3
+2	REL	*	*	*	*	PROP	*	SBJ	C-P	مبتدأ خبر	مبتدأ	3
+3	REL	*	*	*	kAn	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+4	REL	*	*	*	>aSobaH	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+5	REL	*	*	*	>aDoHaY	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+6	REL	*	*	*	>amosaY	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+7	REL	*	*	*	Zal~-a	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+8	REL	*	*	*	bAt	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+9	REL	*	*	*	SAr	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+10	REL	*	*	*	layosa	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+11	REL	*	*	*	zAl	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+12	REL	*	*	*	dAm	VRB	*	SBJ	C-P	مبتدأ	مبتدأ	4
+13	REL	*	*	*	*	VRB	*	SBJ	C-P	مبتدأ فاعل	مبتدأ	3
+14	REL	*	*	*	*	VRB-PASS	*	SBJ	C-P	مبتدأ نائب فاعل	مبتدأ	3
+15	REL	*	*	*	>an~a	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+16	REL	*	*	*	<in~a	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+17	REL	*	*	*	EasaY	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+18	REL	*	*	*	Eal~a	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+19	REL	*	*	*	ka>an~a	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+20	REL	*	*	*	laA	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+21	REL	*	*	*	laEal~a	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+22	REL	*	*	*	layota	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+23	REL	*	*	*	la`kin~a	PRT	*	SBJ	C-P	مبتدأ	مبتدأ	4
+24	REL	*	*	*	>an~a	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+25	REL	*	*	*	<in~a	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+26	REL	*	*	*	EasaY	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+27	REL	*	*	*	Eal~a	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+28	REL	*	*	*	ka>an~a	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+29	REL	*	*	*	laA	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+30	REL	*	*	*	laEal~a	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+31	REL	*	*	*	layota	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+32	REL	*	*	*	la`kin~a	PRT	verb_pseudo	SBJ	C-P	مبتدأ	مبتدأ	5
+33	REL	*	*	*	*	PRT	*	SBJ	C-P	مبتدأ خبر	مبتدأ	3
+34	REL	*	*	*	*	NOM	*	SBJ	P-C	مبتدأ مؤخر	مبتدأ	3
+35	REL	*	*	*	*	PROP	*	SBJ	P-C	مبتدأ مؤخر	مبتدأ	3
+36	REL	*	*	*	kAn	VRB	*	SBJ	P-C	اسم كان	اسم	4
+37	REL	*	*	*	>aSobaH	VRB	*	SBJ	P-C	اسم كان	اسم	4
+38	REL	*	*	*	>aDoHaY	VRB	*	SBJ	P-C	اسم كان	اسم	4
+39	REL	*	*	*	>amosaY	VRB	*	SBJ	P-C	اسم كان	اسم	4
+40	REL	*	*	*	Zal~-a	VRB	*	SBJ	P-C	اسم كان	اسم	4
+41	REL	*	*	*	bAt	VRB	*	SBJ	P-C	اسم كان	اسم	4
+42	REL	*	*	*	SAr	VRB	*	SBJ	P-C	اسم كان	اسم	4
+43	REL	*	*	*	layosa	VRB	*	SBJ	P-C	اسم كان	اسم	4
+44	REL	*	*	*	zAl	VRB	*	SBJ	P-C	اسم كان	اسم	4
+45	REL	*	*	*	dAm	VRB	*	SBJ	P-C	اسم كان	اسم	4
+46	REL	*	*	*	*	VRB	*	SBJ	P-C	فاعل	فاعل	3
+47	REL	*	*	*	*	VRB-PASS	*	SBJ	P-C	نائب فاعل	نائب فاعل	3
+48	REL	*	*	*	>an~a	PRT	*	SBJ	P-C	اسم إن	اسم	4
+49	REL	*	*	*	<in~a	PRT	*	SBJ	P-C	اسم إن	اسم	4
+50	REL	*	*	*	EasaY	PRT	*	SBJ	P-C	اسم إن	اسم	4
+51	REL	*	*	*	Eal~a	PRT	*	SBJ	P-C	اسم إن	اسم	4
+52	REL	*	*	*	ka>an~a	PRT	*	SBJ	P-C	اسم إن	اسم	4
+53	REL	*	*	*	laA	PRT	*	SBJ	P-C	اسم إن	اسم	4
+54	REL	*	*	*	laEal~a	PRT	*	SBJ	P-C	اسم إن	اسم	4
+55	REL	*	*	*	layota	PRT	*	SBJ	P-C	اسم إن	اسم	4
+56	REL	*	*	*	la`kin~a	PRT	*	SBJ	P-C	اسم إن	اسم	4
+57	REL	*	*	*	>an~a	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+58	REL	*	*	*	<in~a	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+59	REL	*	*	*	EasaY	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+60	REL	*	*	*	Eal~a	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+61	REL	*	*	*	ka>an~a	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+62	REL	*	*	*	laA	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+63	REL	*	*	*	laEal~a	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+64	REL	*	*	*	layota	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+65	REL	*	*	*	la`kin~a	PRT	verb_pseudo	SBJ	P-C	اسم إن	اسم	5
+66	REL	*	*	*	*	PRT	*	SBJ	P-C	مبتدأ مؤخر	مبتدأ	3
+67	REL	*	*	*	*	PRT	conj	OBJ	P-C	معطوف	معطوف	4
+68	REL	*	*	*	*	PRT	prep	OBJ	P-C	مجرور	مجرور	4
+69	REL	*	*	*	*	VRB	*	OBJ	P-C	مفعول به	مفعول به	3
+70	REL	*	*	*	*	VRB-PASS	*	OBJ	P-C	مفعول به	مفعول به	3
+71	REL	*	*	*	*	PRT	conj_sub	OBJ	P-C	مرتبط	مرتبط	4
+72	REL	*	*	*	*	PRT	part_connect	OBJ	P-C	مرتبط	مرتبط	4
+73	REL	*	*	*	*	PRT	part_emphatic	OBJ	P-C	مؤكد	مؤكد	4
+74	REL	*	*	*	*	PRT	part_focus	OBJ	P-C	مؤكد	مؤكد	4
+75	REL	*	*	*	*	PRT	part_voc	OBJ	P-C	منادى	منادى	4
+76	REL	*	*	*	*	PRT	part_rc	OBJ	P-C	جواب شرط	جواب	4
+77	REL	*	*	*	*	PRT	part_restrict	OBJ	P-C	مستثنى	مستثنى	4
+78	REL	*	*	*	*	PRT	part_conn	OBJ	P-C	مرتبط	مرتبط	4
+79	REL	*	*	*	*	PRT	part_emph	OBJ	P-C	مؤكد	مؤكد	4
+80	REL	*	*	*	*	PRT	part_jus	OBJ	P-C	مجزوم	مجزوم	4
+81	REL	*	*	*	*	PRT	part_sub	OBJ	P-C	منصوب	منصوب	4
+82	REL	*	*	*	*	*	*	OBJ	P-C	متعلق	متعلق	2
+83	REL	*	*	*	*	*	*	OBJ	C-P	متعلق	متعلق	2
+84	REL	*	*	*	*	*	*	PRD	*	خبر	خبر	1
+85	REL	*	*	*	*	*	*	IDF	*	إضافة	إضافة	1
+86	REL	*	*	*	*	*	*	TMZ	*	تمييز	تمييز	1
+87	REL	*	PRT	*	*	*	*	MOD	*	متعلق	متعلق	2
+88	REL	*	PNX	*	*	*	*	MOD	*	ترقيم	ترقيم	2
+89	REL	*	VRB	verb	*	NOM	pron_rel	MOD	*	جملة صلة	جملة صلة	5
+90	REL	*	VRB-PASS	verb	*	NOM	pron_rel	MOD	*	جملة صلة	جملة صلة	5
+91	REL	*	VRB	verb	*	NOM	*	MOD	*	جملة صفة	جملة صفة	4
+92	REL	*	VRB-PASS	verb	*	NOM	*	MOD	*	جملة صفة	جملة صفة	4
+93	REL	*	VRB	verb	*	PROP	*	MOD	*	جملة صفة	جملة صفة	4
+94	REL	*	VRB-PASS	verb	*	PROP	*	MOD	*	جملة صفة	جملة صفة	4
+95	REL	*	FOREIGN	latin	*	*	*	MOD	*	متعلق	متعلق	3
+96	REL	*	FOREIGN	foreign	*	*	*	MOD	*	متعلق	متعلق	3
+97	REL	*	NOM	adj	*	NOM	*	MOD	*	نعت	نعت	4
+98	REL	*	NOM	adj_comp	*	NOM	*	MOD	*	نعت	نعت	4
+99	REL	*	NOM	adj_num	*	NOM	*	MOD	*	نعت	نعت	4
+100	REL	*	PROP	noun_prop	*	NOM	*	MOD	*	بدل	بدل	4
+101	REL	*	NOM	pron_dem	*	NOM	*	MOD	*	بدل	بدل	4
+102	REL	*	NOM	pron_rel	*	NOM	*	MOD	*	بدل	بدل	4
+103	REL	*	NOM	noun	*	NOM	*	MOD	*	بدل	بدل	4
+104	REL	*	NOM	adv	*	*	*	MOD	*	ظرف	ظرف	3
+105	REL	*	NOM	adv_interrog	*	*	*	MOD	*	ظرف	ظرف	3
+106	REL	*	NOM	adv_rel	*	*	*	MOD	*	ظرف	ظرف	3
+107	REL	*	NOM	adj	*	VRB	*	MOD	*	حال	حال	4
+108	REL	*	NOM	noun	*	VRB	*	MOD	*	متعلق	متعلق	4
+109	REL	*	NOM	adj	*	VRB-PASS	*	MOD	*	حال	حال	4
+110	REL	*	NOM	noun	*	VRB-PASS	*	MOD	*	متعلق	متعلق	4
+111	REL	*	*	*	*	*	*	MOD	*	متعلق	متعلق	1
+112	REL	*	*	*	*	*	*	---	*	---	---	1
+113	REL	*	*	*	*	*	*	*	*	UNK	UNK	0
+114	POS	*	FOREIGN	latin	*	*	*	*	*	أجنبي	أجنبي	2
+115	POS	*	FOREIGN	foreign	*	*	*	*	*	أجنبي	أجنبي	2
+116	POS	*	NOM	abbrev	*	*	*	*	*	اختصار	اختصار	2
+117	POS	*	NOM	adj	*	*	*	*	*	صفة	صفة	2
+118	POS	*	NOM	adj_comp	*	*	*	*	*	صفة مقارنة	صفة	2
+119	POS	*	NOM	adj_num	*	*	*	*	*	صفة عدد	صفة	2
+120	POS	*	NOM	adv	*	*	*	*	*	ظرف	ظرف	2
+121	POS	*	NOM	adv_interrog	*	*	*	*	*	ظرف استفهام	ظرف	2
+122	POS	*	NOM	adv_rel	*	*	*	*	*	ظرف موصول	ظرف	2
+123	POS	*	NOM	digit	*	*	*	*	*	رقم	رقم	2
+124	POS	*	NOM	noun	*	*	*	*	*	اسم	اسم	2
+125	POS	*	NOM	noun_num	*	*	*	*	*	اسم عدد	اسم	2
+126	POS	*	NOM	noun_quant	*	*	*	*	*	اسم كم	اسم	2
+127	POS	*	NOM	pron	*	*	*	*	*	ضمير	ضمير	2
+128	POS	*	NOM	pron_dem	*	*	*	*	*	ضمير إشارة	ضمير	2
+129	POS	*	NOM	pron_exclam	*	*	*	*	*	ضمير تعجب	ضمير	2
+130	POS	*	NOM	pron_interrog	*	*	*	*	*	ضمير استفهام	ضمير	2
+131	POS	*	NOM	pron_rel	*	*	*	*	*	ضمير موصول	ضمير	2
+132	POS	*	NOM	verb_nom	*	*	*	*	*	فعل جامد	فعل جامد	2
+133	POS	*	PNX	punc	*	*	*	*	*	علامة ترقيم	ترقيم	2
+134	POS	*	PNX	*	*	*	*	*	*	علامة ترقيم	ترقيم	1
+135	POS	*	PROP	noun_prop	*	*	*	*	*	اسم علم	اسم	2
+136	POS	*	PROP	abbrev	*	*	*	*	*	اختصار	اسم	2
+137	POS	*	PROP	*	*	*	*	*	*	اسم علم	اسم	1
+138	POS	*	PRT	conj	*	*	*	*	*	حرف عطف	حرف	2
+139	POS	*	PRT	conj_sub	*	*	*	*	*	أداة ربط	أداة	2
+140	POS	*	NOM	interj	*	*	*	*	*	تعجب	تعجب	2
+141	POS	*	NOM	*	*	*	*	*	*	اسم	اسم	1
+142	POS	*	PRT	part	*	*	*	*	*	أداة	أداة	2
+143	POS	*	PRT	part_connect	*	*	*	*	*	حرف ربط	حرف	2
+144	POS	*	PRT	part_det	*	*	*	*	*	أداة تعريف	أداة	2
+145	POS	*	PRT	part_emphatic	*	*	*	*	*	أداة توكيد	أداة	2
+146	POS	*	PRT	part_focus	*	*	*	*	*	أداة توكيد	أداة	2
+147	POS	*	PRT	part_fut	*	*	*	*	*	أداة استقبال	أداة	2
+148	POS	*	PRT	part_interrog	*	*	*	*	*	أداة استفهام	أداة	2
+149	POS	*	PRT	part_neg	*	*	*	*	*	أداة نفي	أداة	2
+150	POS	*	PRT	part_prog	*	*	*	*	*	أداة مضارعة	أداة	2
+151	POS	*	PRT	part_rc	*	*	*	*	*	جواب شرط	جواب	2
+152	POS	*	PRT	part_restrict	*	*	*	*	*	أداة استثناء	أداة	2
+153	POS	*	PRT	part_verb	*	*	*	*	*	أداة فعل	أداة	2
+154	POS	*	PRT	part_voc	*	*	*	*	*	حرف نداء	حرف	2
+155	POS	*	PRT	prep	*	*	*	*	*	حرف جر	حرف	2
+156	POS	*	PRT	verb_pseudo	*	*	*	*	*	حرف شبه فعل	حرف	2
+157	POS	*	PRT	part_conn	*	*	*	*	*	حرف ربط	حرف	2
+158	POS	*	PRT	part_emph	*	*	*	*	*	أداة توكيد	أداة	2
+159	POS	*	PRT	part_jus	*	*	*	*	*	حرف جزم	حرف	2
+160	POS	*	PRT	part_sub	*	*	*	*	*	حرف نصب	حرف	2
+161	POS	*	PRT	*	*	*	*	*	*	أداة	أداة	1
+162	POS	*	VRB	verb	*	*	*	*	*	فعل	فعل	2
+163	POS	*	VRB-PASS	verb	*	*	*	*	*	فعل مبني للمجهول	فعل	2
+164	POS	*	VRB	*	*	*	*	*	*	فعل	فعل	1
+165	POS	*	VRB-PASS	*	*	*	*	*	*	فعل مبني للمجهول	فعل	1
+166	POS	*	*	*	*	*	*	*	*	UNK	UNK	0
