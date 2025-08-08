@@ -27,7 +27,7 @@ from docopt import docopt
 from utils.analyzer import set_up_analyzer
 from conllx_df.conllx_df import ConllxDf
 
-from utils.dir_utils import get_file_names, remove_file_name_extension
+from utils.dir_utils import get_conll_files, remove_file_name_extension
 from wellformedness.get_conllu_wellformedness_stats import save_stats
 from wellformedness.clitic_check import clitic_checker
 from wellformedness.common_functions import add_token_level_details, add_text_details
@@ -118,7 +118,7 @@ def main():
         file_name_list = [conll_path.name]
     elif arguments['--dir']:
         dir_path = pathlib.Path(arguments['--dir'])
-        file_name_list = get_file_names(dir_path, 'conllx')
+        file_name_list = get_conll_files(dir_path, 'conllx')
 
     stats_dict_list = []
     # get errors then save errors per conllx file

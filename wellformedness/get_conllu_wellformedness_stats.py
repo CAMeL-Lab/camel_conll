@@ -1,5 +1,3 @@
-import pathlib
-from typing import List
 import pandas as pd
 
 from utils.dir_utils import remove_file_name_extension
@@ -28,14 +26,6 @@ def get_flagged_issue_count(df):
     # return df['flagged_issue'].value_counts()
     issues_df = df['flagged_issue'].value_counts().to_frame().reset_index()
     return issues_df.rename(columns={'index':'flagged_issue', 'flagged_issue':'count'})
-
-def get_df_list(dir_path: pathlib.Path, file_name_list: List[str]):
-    df_list = []
-    for file_name in file_name_list:
-        df = pd.read_csv(dir_path / file_name, sep='\t')
-        df['file_name'] = remove_file_name_extension(file_name)
-        df_list.append(df)
-    return df_list
 
 def add_missing_error_types(df_err_per_file, ERR_LIST):
     for ERR in ERR_LIST:
@@ -70,30 +60,3 @@ def save_stats(dir_path, stats_name, df_list, stats_dict_list=None):
     df_err_per_file.to_csv(f'{dir_path}/{stats_name}_err_stats_per_file.tsv', sep='\t', index=False)
     df_flagged_issue_count.to_csv(f'{dir_path}/{stats_name}_flagged_issue_count.tsv', sep='\t', index=False)
     print(f'stats saved to {dir_path}/{stats_name}')
-
-# if __name__ == '__main__':
-#     SCRIPT_DESCRIPTION = 'Get wellformedness statistics'
-#     arg_list = [
-#         Argument('-t', '--tsv', str, 'the tsv file'),
-#         Argument('-d', '--directory', str, 'the directory containing tsv files'),
-#         Argument('-s', '--stats_name', str, 'the name of the tsv stats files (default is stats)'),
-#         ]
-
-#     args = generate_argparser_with_arguments(arg_list, script_description=SCRIPT_DESCRIPTION)
-
-
-#     stats_name = args.stats_name or 'stats'
-#     if args.tsv:
-#         # print(args.conllx)
-#         print(f'Processing {args.tsv}')
-#         dir_path = pathlib.Path(args.tsv)
-#         df = pd.read_csv(args.tsv, sep='\t')
-#         # file_issues = get_flagged_issue_count(df)
-#         df.to_csv(f'{dir_path.parent}/{stats_name}_err_stats.tsv', sep='\t')
-#         # df_err_per_file.to_csv(f'{dir_path.parent}/{stats_name}_err_stats_per_file.tsv', sep='\t')
-#     if args.directory:
-#         dir_path = pathlib.Path(args.directory)
-#         file_name_list = get_file_names(args.directory, '.tsv')
-        
-#         df_list = get_df_list(dir_path, file_name_list)
-#         save_stats(dir_path, stats_name, df_list)
