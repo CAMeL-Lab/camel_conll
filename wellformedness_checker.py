@@ -2,16 +2,14 @@
 to help with annotation.
 
 Usage:
-    text_to_conll_cli ((-c <input> | --conll=<input>) | (-d <input> | --dir=<input>))
+    text_to_conll_cli (-i <input> | --input=<input>)
         (-o <output> | --output=<output>)
         [-b <morphology_db_type> | --morphology_db_type=<morphology_db_type>]
     text_to_conll_cli (-h | --help)
 
 Options:
-    -c <input> --conll=<input>
-        A CoNLL file
-    -d <input> --dir=<input>
-        A directory of CoNLL files
+    -i <input> --input=<input>
+        A CoNLL-U/X file or a directory containing CoNLL-U/X files
     -o <output> --output=<output>
         The directory to fixed CoNLL files
     -b <morphology_db_type> --morphology_db_type=<morphology_db_type>
@@ -112,20 +110,16 @@ def main():
 
     analyzer = set_up_analyzer(morphology_db_type)
 
-    if arguments['--conll']:
-        conll_path = pathlib.Path(arguments['--conll'])
-        dir_path = conll_path.parent
-        file_name_list = [conll_path.name]
-    elif arguments['--dir']:
-        dir_path = pathlib.Path(arguments['--dir'])
-        file_name_list = get_conll_files(dir_path, 'conllx')
+    files = get_conll_files(arguments['--input'])
 
     stats_dict_list = []
     # get errors then save errors per conllx file
     df_list = []
-    for file_name in file_name_list:
+    for conll_file in files:
+        full_path = pathlib.Path(conll_file)
+        file_name = full_path.name
         print(f'Processing file {file_name}')
-        conllx = ConllxDf(file_path=dir_path / file_name)
+        conllx = ConllxDf(file_path=full_path)
         
 
         errors_and_stats = {
@@ -143,7 +137,7 @@ def main():
         # will save errors per file in separate tsv files.
         df.to_csv(f"{output_path}/{remove_file_name_extension(file_name)}.tsv", sep='\t', index=False)
     
-    save_stats(pathlib.Path(output_path), dir_path.name, df_list, stats_dict_list)
+    save_stats(pathlib.Path(output_path), df_list, stats_dict_list)
 
 if __name__ == '__main__':
     main()
