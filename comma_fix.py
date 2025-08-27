@@ -14,10 +14,11 @@ Options:
     -p <input> --parent_dir=<input>
         A directory of directories of CoNLL files
     -o <output> --output=<output>
-        The directory to fixed CoNLL files
+        The directory to save the fixed CoNLL files
     -h --help
         Show this screen.
 """
+import os
 import pathlib
 from typing import List, Union
 from pandas import concat, DataFrame
@@ -71,7 +72,6 @@ def get_parent_id(current_token_id: int, conllx_df: DataFrame) -> int:
         int: parent id
     """
     if current_token_id == 0: # the comma is the first token, so parent is an invalid ID of 0
-        # import pdb; pdb.set_trace()
         # keep the comma pointing to current token
         return int(conllx_df[conllx_df['ID'] == 1].to_dict('records')[0]['HEAD'])
 
@@ -151,7 +151,6 @@ def fix_commas(tree_df):
 
 def fix_sentence_commas(tree_df):
     # for sentence in sen_list:
-    # import pdb; pdb.set_trace()
     try:
         data = fix_commas(tree_df)
     except:
@@ -168,7 +167,6 @@ def fix_tags_and_labels(df):
     for i, row in df.iterrows():
         if row['FORM'] in get_prt_token_pos_dict() and \
             row['UPOS'] not in get_prt_token_pos_dict()[row['FORM']]:
-                # import pdb; pdb.set_trace()
                 df.loc[i, 'UPOS'] = get_prt_token_pos_dict()[row['FORM']][0]
     # expr = get_regex_expression_by_tag('PRT')
     # df.loc[df.FORM.str.match(expr), 'UPOS'] = 'PRT'
@@ -200,13 +198,12 @@ def fix_conllx_sentences(conllx):
 
 if __name__ == '__main__':
     output_path = arguments['--output']
+    assert os.path.isdir(output_path), 'The output path passed is not a directory. Please specify a directory.'
 
     if arguments['--conll']:
         conllx_path = pathlib.Path(arguments['--conll'])
-    
         # conllx = read_conllx_file(conllx_full_path.parent, conllx_full_path.name)
         conllx = ConllxDf(file_path=conllx_path)
-        # import pdb; pdb.set_trace()
         conllx.file_data = fix_conllx_sentences(conllx)
         # conllx.file_name = 'comma_test_data_fixed.conllx'
         
@@ -218,7 +215,7 @@ if __name__ == '__main__':
     elif arguments['--dir']:
         dir_path = pathlib.Path(arguments['--dir'])
 
-        file_name_list = get_conll_files(dir_path, 'conllx')
+        file_name_list = get_conll_files(dir_path)
         
         for file_name in file_name_list:
             print(f'Processing file {file_name}')
