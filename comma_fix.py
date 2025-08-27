@@ -175,15 +175,27 @@ def fix_tags_and_labels(df):
     # expr = get_regex_expression_by_tag('NOM')
     # df.loc[df.FORM.str.match(expr), 'UPOS'] = 'NOM'
 
+def is_comma_only_root_att(tree_df):
+    # checks to see if the only tokens that attach to the root are commas.
+    # If that is the case, do not fix commas in the tree, since no other tokens with attach to root
+    # after the commas are fixed.
+    tokens_attached_to_root = tree_df[tree_df.HEAD == 0].FORM.tolist()
+    if all(token in [',', '،'] for token in tokens_attached_to_root):
+        return True
+    return False
 
 def fix_conllx_sentences(conllx):
     
     fixed_df_list = []
     for tree_id in range(conllx.get_sentence_count()):
         tree_df = conllx.get_df_by_id(tree_id)
-        fixed_tree_df = fix_sentence_commas(tree_df)
-        fix_tags_and_labels(fixed_tree_df)
-        fixed_df_list.append(fixed_tree_df)
+        if not is_comma_only_root_att(tree_df):
+            tree_df = fix_sentence_commas(tree_df)
+        # else:
+        #     print(f"{conllx.file_path.name}\t{tree_id}")
+        
+        fix_tags_and_labels(tree_df)
+        fixed_df_list.append(tree_df)
     return concat(fixed_df_list, axis=0)
 
 if __name__ == '__main__':
