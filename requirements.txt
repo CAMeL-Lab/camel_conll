@@ -3,7 +3,7 @@ camel-kenlm==2025.4.8
 camel_tools==1.5.6
 certifi==2025.7.14
 charset-normalizer==3.4.2
-conllx-df @ git+https://github.com/CAMeL-Lab/conllx_df.git@4863578b3a29c36ff031a56ea5dbb5edfed5d04a
+conllx-df @ git+https://github.com/CAMeL-Lab/conllx_df.git@8080ff17480c930c979a8ef26194a7f2b4417ee1
 dill==0.4.0
 docopt==0.6.2
 editdistance==0.8.1

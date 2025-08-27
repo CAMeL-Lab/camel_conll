@@ -14,10 +14,11 @@ Options:
     -p <input> --parent_dir=<input>
         A directory of directories of CoNLL files
     -o <output> --output=<output>
-        The directory to fixed CoNLL files
+        The directory to save the fixed CoNLL files
     -h --help
         Show this screen.
 """
+import os
 import pathlib
 from typing import List, Union
 from pandas import concat, DataFrame
@@ -71,7 +72,6 @@ def get_parent_id(current_token_id: int, conllx_df: DataFrame) -> int:
         int: parent id
     """
     if current_token_id == 0: # the comma is the first token, so parent is an invalid ID of 0
-        # import pdb; pdb.set_trace()
         # keep the comma pointing to current token
         return int(conllx_df[conllx_df['ID'] == 1].to_dict('records')[0]['HEAD'])
 
@@ -151,7 +151,6 @@ def fix_commas(tree_df):
 
 def fix_sentence_commas(tree_df):
     # for sentence in sen_list:
-    # import pdb; pdb.set_trace()
     try:
         data = fix_commas(tree_df)
     except:
@@ -168,33 +167,43 @@ def fix_tags_and_labels(df):
     for i, row in df.iterrows():
         if row['FORM'] in get_prt_token_pos_dict() and \
             row['UPOS'] not in get_prt_token_pos_dict()[row['FORM']]:
-                # import pdb; pdb.set_trace()
                 df.loc[i, 'UPOS'] = get_prt_token_pos_dict()[row['FORM']][0]
     # expr = get_regex_expression_by_tag('PRT')
     # df.loc[df.FORM.str.match(expr), 'UPOS'] = 'PRT'
     # expr = get_regex_expression_by_tag('NOM')
     # df.loc[df.FORM.str.match(expr), 'UPOS'] = 'NOM'
 
+def is_comma_only_root_att(tree_df):
+    # checks to see if the only tokens that attach to the root are commas.
+    # If that is the case, do not fix commas in the tree, since no other tokens with attach to root
+    # after the commas are fixed.
+    tokens_attached_to_root = tree_df[tree_df.HEAD == 0].FORM.tolist()
+    if all(token in [',', '،'] for token in tokens_attached_to_root):
+        return True
+    return False
 
 def fix_conllx_sentences(conllx):
     
     fixed_df_list = []
     for tree_id in range(conllx.get_sentence_count()):
         tree_df = conllx.get_df_by_id(tree_id)
-        fixed_tree_df = fix_sentence_commas(tree_df)
-        fix_tags_and_labels(fixed_tree_df)
-        fixed_df_list.append(fixed_tree_df)
+        if not is_comma_only_root_att(tree_df):
+            tree_df = fix_sentence_commas(tree_df)
+        # else:
+        #     print(f"{conllx.file_path.name}\t{tree_id}")
+        
+        fix_tags_and_labels(tree_df)
+        fixed_df_list.append(tree_df)
     return concat(fixed_df_list, axis=0)
 
 if __name__ == '__main__':
     output_path = arguments['--output']
+    assert os.path.isdir(output_path), 'The output path passed is not a directory. Please specify a directory.'
 
     if arguments['--conll']:
         conllx_path = pathlib.Path(arguments['--conll'])
-    
         # conllx = read_conllx_file(conllx_full_path.parent, conllx_full_path.name)
         conllx = ConllxDf(file_path=conllx_path)
-        # import pdb; pdb.set_trace()
         conllx.file_data = fix_conllx_sentences(conllx)
         # conllx.file_name = 'comma_test_data_fixed.conllx'
         
@@ -206,7 +215,7 @@ if __name__ == '__main__':
     elif arguments['--dir']:
         dir_path = pathlib.Path(arguments['--dir'])
 
-        file_name_list = get_conll_files(dir_path, 'conllx')
+        file_name_list = get_conll_files(dir_path)
         
         for file_name in file_name_list:
             print(f'Processing file {file_name}')
