@@ -1,4 +1,4 @@
-CamelParser
+Camel CoNLL
 =============
 
 .. image:: https://img.shields.io/pypi/l/camel-tools.svg
@@ -72,7 +72,23 @@ See the `CoNLL evaluation README <https://github.com/CAMeL-Lab/camel_conll/tree/
 CoNLL statistics
 ^^^^^^^^^^^^^^^^
 
-See the `CoNLL statistics README <https://github.com/CAMeL-Lab/camel_conll/tree/main/conll_stats/README.md>`_ for details of the tool and how to run it.
+You can us the CoNLL statistics script to generate statistics for one or more CoNLL files using the following link:
+
+.. code-block:: bash
+    python conll_stats.py -i [path/to/file/or/dir] -o [output/path/] [-flags]
+
+There are five flags that can be added at the end, that give statistics for:
+* w: words, statistics on the word level
+* s: sentences, statistics on the sentence level
+* p: pos_tags, the counts of the different part-of-speech tags
+* d: deprel_labels, the counts of the different dependency relation labels
+* l: leading, how many parent-child relations are led by the parent vs. by the child
+
+To generate statistics for the words, sentences, and determining the count of leading relationships, you would use -wsl:
+
+.. code-block:: bash
+    python conll_stats.py -i [path/to/file/or/dir] -o [output/path/] -wsl
+
 
 Well-formedness checker
 ^^^^^^^^^^^^^^^^^^^^^^^
