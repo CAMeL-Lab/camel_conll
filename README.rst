@@ -67,12 +67,12 @@ Note that if the input and output directories are the same, the fixed CoNLL file
 CoNLL evaluation
 ^^^^^^^^^^^^^^^^
 
-See the `CoNLL evaluation README<https://github.com/CAMeL-Lab/camel_conll/tree/main/conll_evaluation/README.md>`_ for details of the tool and how to run it.
+See the `CoNLL evaluation README <https://github.com/CAMeL-Lab/camel_conll/tree/main/conll_evaluation/README.md>`_ for details of the tool and how to run it.
 
 CoNLL statistics
 ^^^^^^^^^^^^^^^^
 
-See the `CoNLL statistics README<https://github.com/CAMeL-Lab/camel_conll/tree/main/conll_stats/README.md>`_ for details of the tool and how to run it.
+See the `CoNLL statistics README <https://github.com/CAMeL-Lab/camel_conll/tree/main/conll_stats/README.md>`_ for details of the tool and how to run it.
 
 Well-formedness checker
 ^^^^^^^^^^^^^^^^^^^^^^^
