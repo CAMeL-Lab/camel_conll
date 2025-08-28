@@ -44,6 +44,7 @@ This conversion is done using a set of rules found in the latest map file, catib
 To run CATiB enrichment:
 
 .. code-block:: bash
+
     python catib_enrichment.py -i path/to/file(s) -o path/to/output
 
 The -m parameter is optional, as the latest stable map file will be used by default.
@@ -75,6 +76,7 @@ CoNLL statistics
 You can us the CoNLL statistics script to generate statistics for one or more CoNLL files using the following link:
 
 .. code-block:: bash
+
     python conll_stats.py -i [path/to/file/or/dir] -o [output/path/] [-flags]
 
 There are five flags that can be added at the end, that give statistics for:
@@ -87,6 +89,7 @@ There are five flags that can be added at the end, that give statistics for:
 To generate statistics for the words, sentences, and determining the count of leading relationships, you would use -wsl:
 
 .. code-block:: bash
+
     python conll_stats.py -i [path/to/file/or/dir] -o [output/path/] -wsl
 
 
@@ -96,6 +99,7 @@ Well-formedness checker
 You can pass a CoNLL file or directory of CoNLL files:
 
 .. code-block:: bash
+
     python wellformedness_checker.py -i [path/to/file/or/dir] -o [output/path/]
 
 The checker uses the r13 database by default, but you can pass calima-msa-s31. See the Databases section for details.
@@ -116,6 +120,7 @@ follow these steps (note that you need an account with the LDC):
 .. code-block:: bash
 
     camel_data -i morphology-db-msa-s31 
+    
     camel_data -i disambig-bert-unfactored-msa
 
 3. Download the LDC2010L01 from the ldc downloads:
