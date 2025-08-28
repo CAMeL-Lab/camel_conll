@@ -36,7 +36,7 @@ def add_missing_error_types(df_err_per_file, ERR_LIST):
     df_err_per_file = df_err_per_file.reindex(new_column_order, axis=1)
     return df_err_per_file
 
-def save_stats(dir_path, stats_name, df_list, stats_dict_list=None):
+def save_stats(dir_path, df_list, stats_dict_list=None):
     df = pd.concat(df_list)
     
     # move filename to beginning
@@ -56,7 +56,8 @@ def save_stats(dir_path, stats_name, df_list, stats_dict_list=None):
     
     df_flagged_issue_count = get_flagged_issue_count(df)
     
-    df.to_csv(f'{dir_path}/{stats_name}_err_stats.tsv', sep='\t', index=False)
-    df_err_per_file.to_csv(f'{dir_path}/{stats_name}_err_stats_per_file.tsv', sep='\t', index=False)
-    df_flagged_issue_count.to_csv(f'{dir_path}/{stats_name}_flagged_issue_count.tsv', sep='\t', index=False)
-    print(f'stats saved to {dir_path}/{stats_name}')
+    df.to_csv(f'{dir_path}/error_stats_overview.tsv', sep='\t', index=False)
+    df_err_per_file.to_csv(f'{dir_path}/error_stats_per_file.tsv', sep='\t', index=False)
+    df_flagged_issue_count.to_csv(f'{dir_path}/error_stats_flagged_issue_count.tsv', sep='\t', index=False)
+    print(f'stats saved to {dir_path}')
+    print("stat summaries files start with 'error_stats'")
