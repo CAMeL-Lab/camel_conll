@@ -2,17 +2,13 @@
 This script connects the comma to the correct token before it.
 
 Usage:
-    text_to_conll_cli ((-c <input> | --conll=<input>) | (-d <input> | --dir=<input>) | (-p <input> | --parent_dir=<input>))
+    text_to_conll_cli (-i <input> | --input=<input>)
         (-o <output> | --output=<output>)
     text_to_conll_cli (-h | --help)
 
 Options:
-    -c <input> --conll=<input>
-        A CoNLL file
-    -d <input> --dir=<input>
-        A directory of CoNLL files
-    -p <input> --parent_dir=<input>
-        A directory of directories of CoNLL files
+    -i <input> --input=<input>
+        A CoNLL-U/X file or a directory containing CoNLL-U/X files
     -o <output> --output=<output>
         The directory to save the fixed CoNLL files
     -h --help
@@ -197,28 +193,21 @@ def fix_conllx_sentences(conllx):
     return concat(fixed_df_list, axis=0)
 
 if __name__ == '__main__':
-    output_path = arguments['--output']
+    output_path = pathlib.Path(arguments['--output'])
     assert os.path.isdir(output_path), 'The output path passed is not a directory. Please specify a directory.'
 
-    if arguments['--conll']:
-        conllx_path = pathlib.Path(arguments['--conll'])
-        # conllx = read_conllx_file(conllx_full_path.parent, conllx_full_path.name)
-        conllx = ConllxDf(file_path=conllx_path)
+    files = get_conll_files(arguments['--input'])
+
+    for conll_file in files:
+        full_path = pathlib.Path(conll_file)
+        file_name = full_path.name
+        print(f'Processing file {file_name}')
+        conllx = ConllxDf(file_path=conll_file)
         conllx.file_data = fix_conllx_sentences(conllx)
-        # conllx.file_name = 'comma_test_data_fixed.conllx'
-        
-        if conllx_path == output_path: # same path, change name to avoid overwriting original
-            file_name = f"{remove_file_name_extension(conllx.file_path.name)}_comma_fixed.conllx"
+
+        if full_path.parent == output_path: # same path, change name to avoid overwriting original
+            file_name = f"{remove_file_name_extension(file_name)}_comma_fixed.conllx"
         else:
             file_name = ''
-        conllx.write(pathlib.Path(output_path), file_name)
-    elif arguments['--dir']:
-        dir_path = pathlib.Path(arguments['--dir'])
-
-        file_name_list = get_conll_files(dir_path)
         
-        for file_name in file_name_list:
-            print(f'Processing file {file_name}')
-            conllx = ConllxDf(file_path=dir_path / file_name)
-            conllx.file_data = fix_conllx_sentences(conllx)
-            conllx.write(pathlib.Path(output_path), '')
+        conllx.write(pathlib.Path(output_path), file_name)
