@@ -34,7 +34,8 @@ Installation
 Tools
 --------------------
 
-^ CATiB enrichment
+CATiB enrichment
+^^^^^^^^^^^^^^^^
 
 Convert the part-of-speech tags and dependency relation labels from CATiB to traditional Arabic tags and labels.
 
@@ -48,7 +49,8 @@ To run CATiB enrichment:
 The -m parameter is optional, as the latest stable map file will be used by default.
 
 
-^ Comma fixer
+Comma fixer
+^^^^^^^^^^^
 
 After running files through a dependency parser, some trees may contain commas that have incorrect attachments. 
 The comma fix script is used on a CoNLL file or directory of CoNLL files in order to make these fixes by attaching the comma to
@@ -62,15 +64,18 @@ To run the comma fixer:
 
 Note that if the input and output directories are the same, the fixed CoNLL files will will have 'comma_fixed' attached to the end.
 
-^ CoNLL evaluation
+CoNLL evaluation
+^^^^^^^^^^^^^^^^
 
 See the `CoNLL evaluation README<https://github.com/CAMeL-Lab/camel_conll/tree/main/conll_evaluation/README.md>`_ for details of the tool and how to run it.
 
-^ CoNLL statistics
+CoNLL statistics
+^^^^^^^^^^^^^^^^
 
 See the `CoNLL statistics README<https://github.com/CAMeL-Lab/camel_conll/tree/main/conll_stats/README.md>`_ for details of the tool and how to run it.
 
-^ Well-formedness checker
+Well-formedness checker
+^^^^^^^^^^^^^^^^^^^^^^^
 
 You can pass a CoNLL file or directory of CoNLL files:
 
